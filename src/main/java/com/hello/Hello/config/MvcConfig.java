@@ -13,7 +13,7 @@ public class MvcConfig extends WebMvcConfigurerAdapter{
 	public void addViewControllers(ViewControllerRegistry reg) {
 		// TODO Auto-generated method stub
 		reg.addViewController("/").setViewName("home");
-		reg.addViewController("/signup").setViewName("signup");
+		//reg.addViewController("/signup").setViewName("signup");
 		
 	}
 
