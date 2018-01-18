@@ -22,7 +22,7 @@ public class PDFCreaterController {
 		try {
 			Doc doc = new Doc();
 			doc.setTest(true); // test documents are free but watermarked
-			doc.setDocumentContent("<html><body>Hello World</body></html>"); // supply
+			//doc.setDocumentContent("<html><body>Hello World</body></html>"); // supply
 																				// content
 																				// directly
 			 doc.setDocumentUrl("https://docs.spring.io/spring-data/jpa/docs/1.5.0.RELEASE/reference/html/repositories.html#repositories.query-methods");
@@ -41,7 +41,7 @@ public class PDFCreaterController {
 			FileOutputStream file = new FileOutputStream("d:/docraptor-java.pdf");
 			file.write(create_response);
 			file.close();
-			return "Desktop/docraptor-java.pdf";
+			return "d:/docraptor-java.pdf";
 		} catch (com.docraptor.ApiException error) {
 			System.err.println(error);
 			System.err.println(error.getCode());
