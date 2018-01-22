@@ -1,5 +1,6 @@
 package com.hello.Hello.controller;
 
+import java.io.File;
 import java.io.FileOutputStream;
 
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,7 +13,7 @@ import com.docraptor.DocApi;
 public class PDFCreaterController {
 	
 	@RequestMapping("/pdf")
-	public String pdf() throws Exception {
+	public FileOutputStream pdf() throws Exception {
 		DocApi docraptor = new DocApi();
 		ApiClient client = docraptor.getApiClient();
 		client.setUsername("YOUR_API_KEY_HERE"); // this key works for test
@@ -40,15 +41,17 @@ public class PDFCreaterController {
 			byte[] create_response = docraptor.createDoc(doc);
 			FileOutputStream file = new FileOutputStream("d:/docraptor-java.pdf");
 			file.write(create_response);
-			file.close();
-			return "d:/docraptor-java.pdf";
+			//file.close();
+			return file;
 		} catch (com.docraptor.ApiException error) {
 			System.err.println(error);
 			System.err.println(error.getCode());
 			System.err.println(error.getMessage());
 			System.err.println(error.getResponseBody());
-			return "error";
+			return new FileOutputStream("");
 
 		}
 	}
+	
+	
 }

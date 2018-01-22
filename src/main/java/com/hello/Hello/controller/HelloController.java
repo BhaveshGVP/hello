@@ -19,6 +19,11 @@ public class HelloController {
 		model.addAttribute("name","bhavesh");
 		return "hello";
 	}
+	@RequestMapping("/contact")
+	public String contact(Model model) {
+		return "contact";
+	
+	}
 	/*@RequestMapping("/hello")
 	public ModelAndView hello( ) {
 		ModelAndView model= new ModelAndView("hello");
