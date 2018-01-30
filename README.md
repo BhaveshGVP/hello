@@ -15,7 +15,6 @@ you have set your client id in contact.jsp file, contact.jsp file found uder web
           You’ll only need a Client ID OAuth credential here. Fill the name field and add our allowed domain and callback page urls (you             can add 
           
                 'Authorized JavaScript origins'= http://localhost:8080 
-                'Authorized JavaScript origins'= http://localhost:8090 
                 'Authorized redirect URIs' = http://localhost:8080 ) then save it.
                 
  Step 4: Client Id display in Credentials tab.
